@@ -30,3 +30,4 @@ for password in pwfile:
         
     except smtplib.SMTPAuthenticationError:
         print "[!] Pass incorrect get a good password file u dummy %s" % password
+

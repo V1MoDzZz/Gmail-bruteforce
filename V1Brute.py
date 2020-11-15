@@ -14,7 +14,7 @@ print('''
 
 ''')
 
-smtpserver = smtplib.SMTP("smtp.google.com", 587)
+smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
 smtpserver.ehlo()
 smtpserver.starttls()
 

